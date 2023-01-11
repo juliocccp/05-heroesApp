@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>¿Estas Seguro de Eliminar?</h1>
+<mat-divider></mat-divider>
+<div mat-dialog-content>
+  Estas a Punto de Borrar a {{data.superhero}}
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close color="warn" (click)="borrar()">Si, Borrar</button>
+  <button mat-button mat-dialog-close cdkFocusInitial (click)="cancelar()">Cancelar</button>
+</div>

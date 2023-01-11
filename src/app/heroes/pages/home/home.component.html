@@ -1,0 +1,45 @@
+<mat-sidenav-container fullscreen>
+
+    <mat-toolbar>
+        <button mat-icon-button (click)=" sidenav.toggle() ">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span class="spacer"></span>
+        <span>{{auth.usuario}}</span>
+        <button mat-button (click)="logout()">Logout</button>
+    </mat-toolbar>
+
+    <mat-sidenav #sidenav mode="push">
+        <mat-toolbar>
+            <span>Menú</span>
+            <!-- este span aplica la clase spacer que pone felx para separa los objetos a los extremos -->
+            <span class="spacer"></span>
+            <button mat-icon-button (click)="sidenav.toggle()">
+                    <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar>
+
+        <mat-nav-list>
+
+            <a routerLink="./listado" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon matListItemIcon>label</mat-icon>
+                <span matListItemTitle>Listado de Héroes</span>
+            </a>
+            <a routerLink="./agregar" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon matListItemIcon>add</mat-icon>
+                <span matListItemTitle>Agregar Héroe</span>
+            </a>
+            <a routerLink="./buscar" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon matListItemIcon>search</mat-icon>
+                <span matListItemTitle>Buscar Héroes</span>
+            </a>
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+
+</mat-sidenav-container>
